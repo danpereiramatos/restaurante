@@ -1,9 +1,10 @@
 package br.com.nomeempresa.restaurante.adapters.outbound;
 
+import br.com.nomeempresa.restaurante.adapters.inbound.mapper.ConversorPagamentoDominioEntidade;
 import br.com.nomeempresa.restaurante.adapters.outbound.repository.PaymentRepository;
-import br.com.nomeempresa.restaurante.core.domain.entities.Payment;
 import br.com.nomeempresa.restaurante.core.domain.entities.StatusPayment;
-import br.com.nomeempresa.restaurante.ports.out.IPaymentPort;
+import br.com.nomeempresa.restaurante.core.domain.entities.payment.Payment;
+import br.com.nomeempresa.restaurante.ports.out.ISavePaymentPort;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
 
@@ -13,20 +14,20 @@ import java.util.List;
 
 @Component
 @AllArgsConstructor
-public class PaymentAdapter implements IPaymentPort {
+public class SavePaymentAdapter implements ISavePaymentPort {
 
     private final PaymentRepository paymentRepository;
+
+    private final ConversorPagamentoDominioEntidade pagamentoDominioEntidade;
 
     private static final List<Payment> payments = new ArrayList<>();
 
 
     @Override
-    public Payment generatedPayment(Payment payment) {
-        Payment paymentDTO = new Payment(payment.getAmount(), payment.getClient(), payment.getProduct(), payment.getStatus());
+    public Payment savedPayment(Payment payment) {
+        paymentRepository.save(pagamentoDominioEntidade.converterParaDominio(payment));
 
-        payments.add(paymentDTO);
-
-        return paymentDTO;
+        return payment;
     }
 
     @Override
@@ -41,7 +42,7 @@ public class PaymentAdapter implements IPaymentPort {
 
     @Override
     public StatusPayment getStatusPayment(Long id) {
-        return recoverDataPayment(id).getStatus();
+        return null;
     }
 
     @Override

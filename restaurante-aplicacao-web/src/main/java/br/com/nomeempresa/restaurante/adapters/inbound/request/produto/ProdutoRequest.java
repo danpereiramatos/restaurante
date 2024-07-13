@@ -1,4 +1,4 @@
-package br.com.nomeempresa.restaurante.adapters.inbound.request;
+package br.com.nomeempresa.restaurante.adapters.inbound.request.produto;
 
 import br.com.nomeempresa.restaurante.core.domain.entities.Categoria;
 import jakarta.validation.constraints.DecimalMin;

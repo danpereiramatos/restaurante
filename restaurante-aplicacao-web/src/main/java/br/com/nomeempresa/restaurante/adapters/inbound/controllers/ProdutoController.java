@@ -1,7 +1,7 @@
 package br.com.nomeempresa.restaurante.adapters.inbound.controllers;
 
 import br.com.nomeempresa.restaurante.adapters.inbound.mapper.ConversorRequestDominio;
-import br.com.nomeempresa.restaurante.adapters.inbound.request.ProdutoRequest;
+import br.com.nomeempresa.restaurante.adapters.inbound.request.produto.ProdutoRequest;
 import br.com.nomeempresa.restaurante.core.domain.entities.Categoria;
 import br.com.nomeempresa.restaurante.core.domain.entities.Produto;
 import br.com.nomeempresa.restaurante.ports.in.ProdutoServicePort;

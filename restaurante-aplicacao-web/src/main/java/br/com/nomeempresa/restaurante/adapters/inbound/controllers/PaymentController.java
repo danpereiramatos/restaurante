@@ -1,9 +1,9 @@
 package br.com.nomeempresa.restaurante.adapters.inbound.controllers;
 
 import br.com.nomeempresa.restaurante.adapters.inbound.mapper.ConversorRequestDominio;
-import br.com.nomeempresa.restaurante.adapters.inbound.request.PaymentRequest;
-import br.com.nomeempresa.restaurante.core.domain.entities.Payment;
+import br.com.nomeempresa.restaurante.adapters.inbound.request.payment.PaymentRequest;
 import br.com.nomeempresa.restaurante.core.domain.entities.StatusPayment;
+import br.com.nomeempresa.restaurante.core.domain.entities.payment.Payment;
 import br.com.nomeempresa.restaurante.ports.in.IPaymentServicePort;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
@@ -22,12 +22,7 @@ public class PaymentController {
 
     @PostMapping("generate-payment")
     public Payment generatePayment(@RequestBody @Valid PaymentRequest request) {
-        return iPaymentServicePort.generatedPayment(converter.converterPaymentToDomain(request));
-    }
-
-    @PutMapping
-    public Payment updatePayment(@RequestBody PaymentRequest request) {
-        return iPaymentServicePort.updatePayment(converter.converterPaymentToDomain(request));
+        return iPaymentServicePort.generatedPayment(converter.converterPaymentParaDominio(request));
     }
 
     @GetMapping("findById/{id}")

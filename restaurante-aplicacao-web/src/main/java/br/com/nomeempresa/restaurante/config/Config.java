@@ -1,7 +1,8 @@
 package br.com.nomeempresa.restaurante.config;
 
+import br.com.nomeempresa.restaurante.adapters.outbound.GeneratedPaymentAdapter;
 import br.com.nomeempresa.restaurante.adapters.outbound.Produtodapter;
-import br.com.nomeempresa.restaurante.adapters.outbound.PaymentAdapter;
+import br.com.nomeempresa.restaurante.adapters.outbound.SavePaymentAdapter;
 import br.com.nomeempresa.restaurante.adapters.outbound.CustomerAdapter;
 import br.com.nomeempresa.restaurante.core.service.ProdutoService;
 import br.com.nomeempresa.restaurante.core.service.PaymentService;
@@ -23,7 +24,7 @@ public class Config {
     }
 
     @Bean
-    public PaymentService paymentServiceProduces(PaymentAdapter paymentAdapter){
-        return new PaymentService(paymentAdapter);
+    public PaymentService paymentServiceProduces(SavePaymentAdapter paymentAdapter, GeneratedPaymentAdapter generatedPaymentAdapter){
+        return new PaymentService(paymentAdapter, generatedPaymentAdapter);
     }
 }

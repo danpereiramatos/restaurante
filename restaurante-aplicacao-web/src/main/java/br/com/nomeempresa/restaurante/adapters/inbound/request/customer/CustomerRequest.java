@@ -1,4 +1,4 @@
-package br.com.nomeempresa.restaurante.adapters.inbound.request;
+package br.com.nomeempresa.restaurante.adapters.inbound.request.customer;
 
 import jakarta.validation.constraints.Email;
 import org.hibernate.validator.constraints.br.CPF;

@@ -1,7 +1,7 @@
 package br.com.nomeempresa.restaurante.adapters.inbound.controllers;
 
 import br.com.nomeempresa.restaurante.adapters.inbound.mapper.ConversorRequestDominio;
-import br.com.nomeempresa.restaurante.adapters.inbound.request.CustomerRequest;
+import br.com.nomeempresa.restaurante.adapters.inbound.request.customer.CustomerRequest;
 import br.com.nomeempresa.restaurante.core.domain.entities.Customer;
 import br.com.nomeempresa.restaurante.exception.CustomerAlreadyExistsException;
 import br.com.nomeempresa.restaurante.exception.CustomerNotFoundException;

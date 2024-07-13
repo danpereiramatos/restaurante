@@ -21,14 +21,17 @@ public class PaymentEntity {
     @Column(name = "amount", nullable = false)
     private BigDecimal amount;
 
-    @Column(name = "client")
-    private String client;
+    @Column(name = "payer")
+    private String payer;
 
     @Column(name = "status", nullable = false)
     private String status;
 
+    @Column(name = "type", nullable = false)
+    private String type;
+
     @Column(name = "product", nullable = false)
-    private String product;
+    private ProdutoEntity product;
 
     @Column(name = "date", nullable = false)
     private LocalDate date;

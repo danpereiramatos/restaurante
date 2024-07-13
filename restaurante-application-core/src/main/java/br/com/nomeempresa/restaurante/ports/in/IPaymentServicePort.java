@@ -1,8 +1,8 @@
 package br.com.nomeempresa.restaurante.ports.in;
 
 
-import br.com.nomeempresa.restaurante.core.domain.entities.Payment;
 import br.com.nomeempresa.restaurante.core.domain.entities.StatusPayment;
+import br.com.nomeempresa.restaurante.core.domain.entities.payment.Payment;
 
 import java.util.List;
 
