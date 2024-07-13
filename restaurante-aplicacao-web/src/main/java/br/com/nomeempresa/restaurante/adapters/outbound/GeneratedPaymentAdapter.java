@@ -30,5 +30,4 @@ public class GeneratedPaymentAdapter implements IGeneratedPaymentPort {
             return StatusPayment.FAILED_GENERATED_PAYMENT;
         }
     }
-
 }
