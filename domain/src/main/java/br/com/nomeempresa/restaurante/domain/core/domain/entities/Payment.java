@@ -54,4 +54,5 @@ public class Payment  implements Serializable {
     public void setQrCode(String qrCode) {
         this.qrCode = qrCode;
     }
+
 }
